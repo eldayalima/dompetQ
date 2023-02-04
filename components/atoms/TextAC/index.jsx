@@ -1,7 +1,6 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 
-// const REM = 16;
 const fontSize = {
   primary: 16,
   secondary: 12,
@@ -10,26 +9,26 @@ const fontSize = {
   h3: 20,
 };
 
-const fontWeight = {
-  normal: 400,
-  semibold: 500,
-  bold: 600,
+const fontFamily = {
+  reguler: 'Poppins_400Regular',
+  medium: 'Poppins_500Medium',
+  bold: 'Poppins_600SemiBold',
 };
 
 const fontStyles = {
-  primaryR: [fontSize.primary, fontWeight.normal],
-  primaryM: [fontSize.primary, fontWeight.semibold],
-  primaryB: [fontSize.primary, fontWeight.bold],
-  secondaryR: [fontSize.secondary, fontWeight.normal],
-  secondaryM: [fontSize.secondary, fontWeight.semibold],
-  secondaryB: [fontSize.secondary, fontWeight.bold],
-  h1: [fontSize.h1, fontWeight.bold],
-  h2: [fontSize.h2, fontWeight.bold],
-  h3: [fontSize.h3, fontWeight.bold],
+  primaryR: [fontSize.primary, fontFamily.reguler],
+  primaryM: [fontSize.primary, fontFamily.medium],
+  primaryB: [fontSize.primary, fontFamily.bold],
+  secondaryR: [fontSize.secondary, fontFamily.reguler],
+  secondaryM: [fontSize.secondary, fontFamily.medium],
+  secondaryB: [fontSize.secondary, fontFamily.bold],
+  h1: [fontSize.h1, fontFamily.bold],
+  h2: [fontSize.h2, fontFamily.bold],
+  h3: [fontSize.h3, fontFamily.bold],
 };
 
 export default function TextAC({
-  children, type, addStyle, color = '#FFFFFF',
+  children, type = 'primaryR', addStyle, color = '#FFFFFF',
 }) {
   const style = fontStyles[type];
 
@@ -38,8 +37,8 @@ export default function TextAC({
       <Text
         style={{
           fontSize: style[0],
-          fontWeight: `${style[1]}`,
           color,
+          fontFamily: style[1],
           ...addStyle,
         }}
       >
