@@ -7,6 +7,7 @@ const fontSize = {
   h1: 40,
   h2: 32,
   h3: 20,
+  caption: 10,
 };
 
 const fontFamily = {
@@ -25,6 +26,7 @@ const fontStyles = {
   h1: [fontSize.h1, fontFamily.bold],
   h2: [fontSize.h2, fontFamily.bold],
   h3: [fontSize.h3, fontFamily.bold],
+  caption: [fontSize.caption, fontFamily.reguler],
 };
 
 export default function TextAC({
