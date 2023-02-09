@@ -18,14 +18,11 @@ const style = StyleSheet.create({
   container: {
     backgroundColor: Colors.primary,
     minHeight: '100%',
+    paddingHorizontal: 10,
+    paddingTop: 30,
   },
   cardSummary: {
-    display: 'flex',
     flexDirection: 'row',
-    flexWrap: 'wrap',
     justifyContent: 'space-between',
-    gap: 20,
-    marginHorizontal: 10,
-    marginTop: 20,
   },
 });

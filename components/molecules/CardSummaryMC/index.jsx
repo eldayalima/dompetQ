@@ -28,13 +28,13 @@ export default function CardSummaryMC({
 
 const style = StyleSheet.create({
   container: {
-    width: '47%',
     borderRadius: 15,
     padding: 10,
     backgroundColor: Colors.accents2,
-    display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
+    flex: 1,
+    marginHorizontal: 5,
   },
   icon: {
     justifyContent: 'center',
