@@ -14,7 +14,7 @@ export default function CardSummaryMC({
     outcome: ['arrow-up', Colors.red, 'Pengeluaran'],
   };
   return (
-    <View style={style.container}>
+    <View style={[style.container, type === 'income' ? { marginRight: 5 } : { marginLeft: 5 }]}>
       <View style={style.icon}>
         <Ionicons name={typeValue[type][0]} size={30} color={typeValue[type][1]} />
       </View>
@@ -34,7 +34,6 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     flex: 1,
-    marginHorizontal: 5,
   },
   icon: {
     justifyContent: 'center',

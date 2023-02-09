@@ -35,7 +35,7 @@ export default function TextAC({
   const style = fontStyles[type];
 
   return (
-    <View>
+    <View style={{ justifyContent: 'center' }}>
       <Text
         style={{
           fontSize: style[0],
