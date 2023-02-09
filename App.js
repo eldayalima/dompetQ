@@ -15,6 +15,8 @@ import Colors from './constants/Colors';
 import Transactions from './screens/Transactions';
 import Settings from './screens/Settings';
 import Assets from './screens/Assets';
+import IconButtonsAC from './components/atoms/IconButtonsAC';
+import ModalTransactions from './screens/ModalTransactions';
 
 const Stack = createNativeStackNavigator();
 const ButtomTabs = createBottomTabNavigator();
@@ -49,9 +51,16 @@ function ButtomNavigations() {
       <ButtomTabs.Screen
         name="Transactions"
         component={Transactions}
-        options={{
+        options={({ navigation }) => ({
           title: 'Transactions',
           tabBarLabel: 'Transactions',
+          headerRight: ({ tintColor }) => (
+            <IconButtonsAC
+              icon="add"
+              color={tintColor}
+              onPress={() => navigation.navigate('ManageTransactions')}
+            />
+          ),
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? 'newspaper-sharp' : 'newspaper-outline'}
@@ -59,7 +68,7 @@ function ButtomNavigations() {
               color={color}
             />
           ),
-        }}
+        })}
       />
       <ButtomTabs.Screen
         name="Assets"
@@ -118,8 +127,11 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Home"
-          component={Home}
+          name="ManageTransactions"
+          component={ModalTransactions}
+          options={{
+            presentation: 'modal',
+          }}
         />
       </Stack.Navigator>
     );

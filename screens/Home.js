@@ -1,4 +1,5 @@
 import {
+  Platform,
   SafeAreaView, ScrollView, StatusBar, StyleSheet, View,
 } from 'react-native';
 import React from 'react';
@@ -37,7 +38,10 @@ const style = StyleSheet.create({
   scrollContainer: {
     backgroundColor: Colors.primary,
     paddingHorizontal: 30,
-    paddingTop: StatusBar.currentHeight,
+    paddingTop: Platform.select({
+      ios: StatusBar.currentHeight + 30,
+      android: StatusBar.currentHeight,
+    }),
     flex: 1,
   },
   cardSummary: {

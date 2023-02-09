@@ -1,13 +1,13 @@
 import {
-  View, SafeAreaView, ScrollView, StyleSheet, StatusBar,
+  View, SafeAreaView, ScrollView, StyleSheet, StatusBar, Platform,
 } from 'react-native';
 import React from 'react';
-import { Ionicons } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 import TextAC from '../components/atoms/TextAC';
 import CardSummaryMC from '../components/molecules/CardSummaryMC';
 import ListTrasactionsOC from '../components/organisms/ListTransactionsOC';
 import { dummyData } from '../constants/DummyData';
+import IconButtonsAC from '../components/atoms/IconButtonsAC';
 
 export default function Transactions() {
   return (
@@ -16,8 +16,18 @@ export default function Transactions() {
         <View style={style.containerHeader}>
           <TextAC>January - 2023</TextAC>
           <View style={style.containerHeaderChild}>
-            <Ionicons name="filter" size={24} color="white" />
-            <Ionicons name="information-circle-outline" size={24} color="white" style={{ marginLeft: 10 }} />
+            <IconButtonsAC
+              icon="filter"
+              size={24}
+              color="white"
+              onPress={() => { console.log('filter'); }}
+            />
+            <IconButtonsAC
+              icon="information-circle-outline"
+              size={24}
+              color="white"
+              onPress={() => { console.log('info'); }}
+            />
           </View>
         </View>
         <View style={style.cardSummary}>
@@ -39,7 +49,10 @@ const style = StyleSheet.create({
   scrollContainer: {
     backgroundColor: Colors.primary,
     paddingHorizontal: 30,
-    paddingTop: StatusBar.currentHeight,
+    paddingTop: Platform.select({
+      ios: StatusBar.currentHeight + 30,
+      android: StatusBar.currentHeight,
+    }),
     flex: 1,
   },
   containerHeader: {
