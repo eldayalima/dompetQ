@@ -8,6 +8,7 @@ export default function CardTransactionsMC({
   date = '',
   title = '',
   category = '',
+  source = '',
   total = '',
 }) {
   const valRupiah = `Rp ${total?.toString().replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, '$1.')}`;
@@ -21,7 +22,7 @@ export default function CardTransactionsMC({
           {title}
         </TextAC>
         <TextAC type="secondaryR">
-          {category}
+          {`${category} - ${source}`}
         </TextAC>
       </View>
       <View style={style.info}>

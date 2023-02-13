@@ -5,6 +5,7 @@ export const dummyData = [
     date: '18/01/2023',
     title: 'Launch',
     category: 'Needs',
+    source: 'Gopay',
     total: 100000,
   },
   {
@@ -13,6 +14,7 @@ export const dummyData = [
     date: '25/01/2023',
     title: 'Monthly Salary',
     category: 'Revenue',
+    source: 'Bank BCA',
     total: 10000000,
   },
   {
@@ -21,6 +23,7 @@ export const dummyData = [
     date: '26/01/2023',
     title: 'Monthly Expenses',
     category: 'Monthly Expenses',
+    source: 'Uang Tunai',
     total: 1000000,
   },
   {
@@ -29,6 +32,7 @@ export const dummyData = [
     date: '26/01/2023',
     title: 'Car Gasoline',
     category: 'Transportations',
+    source: 'Gopay',
     total: 300000,
   },
   {
@@ -37,6 +41,7 @@ export const dummyData = [
     date: '26/01/2023',
     title: 'Freelance Salary',
     category: 'Monthly Expenses',
+    source: 'Bank BCA',
     total: 1500000,
   },
   {
@@ -45,6 +50,7 @@ export const dummyData = [
     date: '26/01/2023',
     title: 'Car Gasoline',
     category: 'Transportations',
+    source: 'Uang Tunai',
     total: 300000,
   },
   {
@@ -53,6 +59,7 @@ export const dummyData = [
     date: '26/01/2023',
     title: 'Freelance Salary',
     category: 'Monthly Expenses',
+    source: 'Bank BCA',
     total: 1500000,
   },
   {
@@ -61,6 +68,7 @@ export const dummyData = [
     date: '26/01/2023',
     title: 'Car Gasoline',
     category: 'Transportations',
+    source: 'Uang Tunai',
     total: 300000,
   },
   {
@@ -69,6 +77,7 @@ export const dummyData = [
     date: '26/01/2023',
     title: 'Freelance Salary',
     category: 'Monthly Expenses',
+    source: 'Bank BCA',
     total: 1500000,
   },
   {
@@ -77,6 +86,7 @@ export const dummyData = [
     date: '26/01/2023',
     title: 'Freelance Salary',
     category: 'Monthly Expenses',
+    source: 'Bank BCA',
     total: 1500000,
   },
 ];

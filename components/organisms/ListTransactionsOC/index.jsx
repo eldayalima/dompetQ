@@ -11,6 +11,7 @@ export default function ListTrasactionsOC({ data = [] }) {
         date={val.date}
         title={val.title}
         category={val.category}
+        source={val.source}
         total={val.total}
       />
     ));
