@@ -10,7 +10,7 @@ import {
 } from '@expo-google-fonts/poppins';
 import { Ionicons } from '@expo/vector-icons';
 import Welcome from './screens/Welcome';
-import Home from './screens/Home';
+import Home from './screens/HomeScreen';
 import Colors from './constants/Colors';
 import Transactions from './screens/Transactions';
 import Settings from './screens/Settings';
