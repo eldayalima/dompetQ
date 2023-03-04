@@ -5,7 +5,7 @@ import React from 'react';
 import TextInputMC from '../components/molecules/TextInputMC';
 import Colors from '../constants/Colors';
 
-export default function ModalTransactions() {
+export default function AddTransactions() {
   return (
     <SafeAreaView style={style.safeAreaContainer}>
       <ScrollView style={style.scrollContainer}>

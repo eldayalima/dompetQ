@@ -9,6 +9,7 @@ import {
   useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_600SemiBold,
 } from '@expo-google-fonts/poppins';
 import { Ionicons } from '@expo/vector-icons';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Welcome from './screens/Welcome';
 import Home from './screens/HomeScreen';
 import Colors from './constants/Colors';
@@ -16,10 +17,12 @@ import Transactions from './screens/Transactions';
 import Settings from './screens/Settings';
 import Assets from './screens/Assets';
 import IconButtonsAC from './components/atoms/IconButtonsAC';
-import ModalTransactions from './screens/ModalTransactions';
+import AddTransactions from './screens/AddTransactions';
+import MoveTransactions from './screens/MoveTransactions';
 
 const Stack = createNativeStackNavigator();
 const ButtomTabs = createBottomTabNavigator();
+const TopTabs = createMaterialTopTabNavigator();
 
 function ButtomNavigations() {
   return (
@@ -103,6 +106,41 @@ function ButtomNavigations() {
     </ButtomTabs.Navigator>
   );
 }
+
+function TopNavigations() {
+  return (
+    <TopTabs.Navigator
+      screenOptions={{
+        tabBarActiveTintColor: Colors.white,
+        tabBarLabelStyle: {
+          fontSize: 14,
+        },
+        tabBarStyle: {
+          backgroundColor: Colors.accents,
+        },
+        tabBarIndicatorStyle: {
+          borderBottomColor: Colors.yellow,
+          borderWidth: 1,
+        },
+      }}
+    >
+      <TopTabs.Screen
+        options={{
+          tabBarLabel: 'Transaksi',
+        }}
+        name="AddTransactions"
+        component={AddTransactions}
+      />
+      <TopTabs.Screen
+        options={{
+          tabBarLabel: 'Perpindahan Dana',
+        }}
+        name="MoveTransactions"
+        component={MoveTransactions}
+      />
+    </TopTabs.Navigator>
+  );
+}
 export default function App() {
   const [isAuthUser, setIsAuthUser] = useState(false);
 
@@ -128,7 +166,7 @@ export default function App() {
         />
         <Stack.Screen
           name="ManageTransactions"
-          component={ModalTransactions}
+          component={TopNavigations}
           options={{
             presentation: 'modal',
           }}
